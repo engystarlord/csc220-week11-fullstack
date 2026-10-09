@@ -14,7 +14,6 @@ export default function AddStudentForm({ onAdd, disabled }) {
     setBusy(true);
     try {
       const saved = await onAdd({ name: name.trim(), major: major.trim(), score: numericScore });
-      // Keep the user's inputs if the API failed, so they can retry.
       if (saved) {
         setName("");
         setMajor("");

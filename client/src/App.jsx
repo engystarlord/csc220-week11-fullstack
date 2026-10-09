@@ -8,7 +8,6 @@ export default function App() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  // Lab requirement: the JWT lives only in React state. Refresh logs out.
   const [token, setToken] = useState("");
   const [loginError, setLoginError] = useState("");
   const [actionError, setActionError] = useState("");
@@ -52,7 +51,6 @@ export default function App() {
     setActionError("");
     try {
       const created = await createStudent(student, token);
-      // A new array triggers a React render immediately after POST succeeds.
       setStudents((currentStudents) => [created, ...currentStudents]);
       return true;
     } catch (err) {

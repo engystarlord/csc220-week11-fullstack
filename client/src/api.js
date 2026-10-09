@@ -1,4 +1,3 @@
-// React calls Express. Only the Express server connects to MongoDB.
 const BASE = "http://localhost:3000/api";
 
 async function readError(response) {
@@ -45,5 +44,4 @@ export async function deleteStudent(id, token) {
     headers: { Authorization: `Bearer ${token}` }
   });
   if (!response.ok) throw new Error(await readError(response));
-  // A successful DELETE is 204 No Content: there is no JSON to parse.
 }

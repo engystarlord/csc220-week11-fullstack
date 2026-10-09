@@ -18,7 +18,6 @@ app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
 
-// Start listening only after MongoDB has connected successfully.
 async function start() {
   await connectDB();
   const port = process.env.PORT || 3000;

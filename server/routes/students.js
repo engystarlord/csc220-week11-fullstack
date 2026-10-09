@@ -4,7 +4,6 @@ const auth = require("../middleware/auth");
 
 const router = express.Router();
 
-// Reading students is public. Adding and deleting require a JWT.
 router.get("/", async (req, res) => {
   try {
     const students = await Student.find().sort({ createdAt: -1 });
